@@ -114,3 +114,4 @@ npm run start:dev
 O projeto conta com uma suíte rigorosa rodando sob o **Vitest**:
 *   `npm run test` (Testes Unitários do Domínio e Controllers Isolados)
 *   `npm run test:e2e` (Testes ponta-a-ponta testando a conexão real com a rede Kafka e o Postgres)
+
