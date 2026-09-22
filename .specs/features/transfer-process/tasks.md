@@ -7,9 +7,9 @@
 - [x] 1.4 Setup Vitest for Unit and E2E Testing.
 
 ## Phase 2: Domain Layer (Clean Architecture)
-- [ ] 2.1 Implement `Wallet` Entity and `Transaction` Value Objects (DDD).
-- [ ] 2.2 Implement Event Sourcing rules for balance calculation (Unit Tests only).
-- [ ] 2.3 Implement Risk/Fraud domain rules (Unit Tests only).
+- [x] 2.1 Implement `Wallet` Entity and `Transaction` Value Objects (DDD).
+- [x] 2.2 Implement Event Sourcing rules for balance calculation (Unit Tests only).
+- [x] 2.3 Implement Risk/Fraud domain rules (Unit Tests only).
 
 ## Phase 3: Application Layer & Messaging
 - [ ] 3.1 Implement Kafka Producer and Consumer modules in NestJS.
