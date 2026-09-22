@@ -1,0 +1,21 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model EventStore {
+  sequenceNumber Int      @id @default(autoincrement())
+  id             String   @unique
+  walletId       String
+  amount         Float
+  type           String   // CREDIT or DEBIT
+  status         String   // COMPLETED or FAILED
+  createdAt      DateTime @default(now())
+
+  @@index([walletId])
+}
+

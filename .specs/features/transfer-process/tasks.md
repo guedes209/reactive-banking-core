@@ -12,10 +12,10 @@
 - [x] 2.3 Implement Risk/Fraud domain rules (Unit Tests only).
 
 ## Phase 3: Application Layer & Messaging
-- [ ] 3.1 Implement Kafka Producer and Consumer modules in NestJS.
-- [ ] 3.2 Implement `TransferUseCase` to initiate transfer and publish `TransactionRequestedEvent`.
-- [ ] 3.3 Implement Risk Service consumer to validate and publish `Approved`/`Denied` events.
-- [ ] 3.4 Implement Ledger Consumer to finalize transaction and store Domain Events in Postgres.
+- [x] 3.1 Implement Kafka Producer and Consumer modules in NestJS.
+- [x] 3.2 Implement `TransferUseCase` to initiate transfer and publish `TransactionRequestedEvent`.
+- [x] 3.3 Implement Risk Service consumer to validate and publish `Approved`/`Denied` events.
+- [x] 3.4 Implement Ledger Consumer to finalize transaction and store Domain Events in Postgres.
 
 ## Phase 4: API & CQRS (Execute & Validate)
 - [ ] 4.1 Implement `POST /transfer` REST Endpoint.
