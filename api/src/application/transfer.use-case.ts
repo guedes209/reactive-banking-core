@@ -1,9 +1,11 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable, Inject, Logger } from '@nestjs/common';
 import { ClientKafka } from '@nestjs/microservices';
 import { randomUUID } from 'crypto';
 
 @Injectable()
 export class TransferUseCase {
+  private readonly logger = new Logger(TransferUseCase.name);
+
   constructor(
     @Inject('KAFKA_CLIENT') private readonly kafkaClient: ClientKafka,
   ) {}
@@ -15,6 +17,8 @@ export class TransferUseCase {
 
     const transactionId = randomUUID();
     
+    this.logger.log(`[1] 🚀 Iniciando transferência: ${fromWallet} -> ${toWallet} | Valor: $${amount} | TxID: ${transactionId}`);
+    
     // Emit TransactionRequestedEvent
     this.kafkaClient.emit('transaction.requested', {
       transactionId,
@@ -23,6 +27,8 @@ export class TransferUseCase {
       amount,
       timestamp: new Date().toISOString()
     });
+
+    this.logger.log(`[2] 📤 Evento 'transaction.requested' publicado no Kafka com sucesso!`);
 
     return {
       status: 'PENDING',

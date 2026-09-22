@@ -1,6 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { vi } from 'vitest';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
+import { TransferUseCase } from './application/transfer.use-case.js';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -8,7 +10,15 @@ describe('AppController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [
+        AppService,
+        {
+          provide: TransferUseCase,
+          useValue: {
+            execute: vi.fn(),
+          }
+        }
+      ],
     }).compile();
 
     appController = app.get<AppController>(AppController);

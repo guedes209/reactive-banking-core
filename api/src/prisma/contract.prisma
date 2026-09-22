@@ -11,3 +11,11 @@ model EventStore {
 
   @@index([walletId])
 }
+
+// CQRS Read Model
+model Statement {
+  id             Int      @id @default(autoincrement())
+  walletId       String   @unique
+  balance        Float    @default(0)
+  updatedAt      TimestamptzString @default(now())
+}

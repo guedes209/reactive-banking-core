@@ -18,8 +18,8 @@
 - [x] 3.4 Implement Ledger Consumer to finalize transaction and store Domain Events in Postgres.
 
 ## Phase 4: API & CQRS (Execute & Validate)
-- [ ] 4.1 Implement `POST /transfer` REST Endpoint.
-- [ ] 4.2 Implement Read-Model Updater (CQRS) to populate statement tables.
-- [ ] 4.3 Implement `GET /statement` REST Endpoint querying the read-model.
-- [ ] 4.4 End-to-end integration test validating the entire asynchronous flow.
+- [x] 4.1 Implement `POST /transfer` REST Endpoint.
+- [x] 4.2 Implement Read-Model Updater (CQRS) to populate statement tables.
+- [x] 4.3 Implement `GET /statement` REST Endpoint querying the read-model.
+- [x] 4.4 End-to-end integration test validating the entire asynchronous flow.
 
