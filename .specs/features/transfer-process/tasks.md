@@ -1,0 +1,25 @@
+# Tasks: Transfer Process
+
+## Phase 1: Infrastructure & Monolith Setup
+- [x] 1.1 Scaffold NestJS Application (Monolith base).
+- [x] 1.2 Setup PostgreSQL and Prisma/TypeORM.
+- [x] 1.3 Setup Docker Compose with Apache Kafka, Zookeeper, and PostgreSQL.
+- [x] 1.4 Setup Vitest for Unit and E2E Testing.
+
+## Phase 2: Domain Layer (Clean Architecture)
+- [ ] 2.1 Implement `Wallet` Entity and `Transaction` Value Objects (DDD).
+- [ ] 2.2 Implement Event Sourcing rules for balance calculation (Unit Tests only).
+- [ ] 2.3 Implement Risk/Fraud domain rules (Unit Tests only).
+
+## Phase 3: Application Layer & Messaging
+- [ ] 3.1 Implement Kafka Producer and Consumer modules in NestJS.
+- [ ] 3.2 Implement `TransferUseCase` to initiate transfer and publish `TransactionRequestedEvent`.
+- [ ] 3.3 Implement Risk Service consumer to validate and publish `Approved`/`Denied` events.
+- [ ] 3.4 Implement Ledger Consumer to finalize transaction and store Domain Events in Postgres.
+
+## Phase 4: API & CQRS (Execute & Validate)
+- [ ] 4.1 Implement `POST /transfer` REST Endpoint.
+- [ ] 4.2 Implement Read-Model Updater (CQRS) to populate statement tables.
+- [ ] 4.3 Implement `GET /statement` REST Endpoint querying the read-model.
+- [ ] 4.4 End-to-end integration test validating the entire asynchronous flow.
+
